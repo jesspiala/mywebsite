@@ -1,0 +1,1031 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Inter&family=Lato:wght@300;400;700&family=Work+Sans:wght@300;400;500;800&display=swap');
+
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 80px; /* Adjust the value to match the height of your fixed menu */
+}
+
+
+.fixed-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    background-color: #394FF4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Change this to space-between to position menu and toggle properly */
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+.fixed-menu li {
+    display: inline;
+    margin-right: 40px;
+    padding-left: 0px;
+}
+
+.fixed-menu li:first-child {
+    margin-left: 20px;
+    padding-left: 0;
+}
+.fixed-menu li:first-child {
+    margin-left: 20px; /* Adjust this value as needed */
+}
+
+.fixed-menu .cabecalho-menu {
+    position: relative;
+    z-index: 1000;
+}
+
+.fixed-menu .cabecalho-menu[href="#contact"] {
+    z-index: 1005;
+}
+
+.fixed-menu a {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Work Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: normal;
+    margin-left: 30px;
+}
+
+.fixed-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: #F48480;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 3px;
+    margin-bottom: -4px;
+}
+
+.fixed-menu a:hover::after {
+    transform: scaleX(1);
+}
+
+.my-picture {
+    height: 600px;
+}
+
+/* Hamburger menu styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.bar {
+    background-color: #ffffff;
+    height: 3px;
+    width: 25px;
+    margin: 3px;
+    border-radius: 2px;
+}
+
+/* Start with a mobile-first approach: Hide the menu items by default and only show the hamburger icon */
+.menu-container ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 80px; /* height of your fixed menu */
+    left: 0;
+    background-color: #394FF4;
+    z-index: 999;
+}
+
+.menu-container.active ul {
+    display: flex;
+}
+
+.menu-container li {
+    padding: 15px 20px;
+}
+/* Responsive styles */
+
+
+/* Mobile phones */
+@media (max-width: 767px) {
+    .menu-container {
+        display: none; 
+    }
+
+    .menu-toggle {
+        display: flex; 
+    }
+
+    .menu-container.active {
+        display: block;
+        
+    }
+
+    .fixed-menu {
+        z-index: 1007;
+    }
+}
+
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .menu-container ul {
+        display: flex;
+        position: static;
+        background-color: transparent;
+        flex-direction: row;
+        align-items: center; /* Vertically align menu items */
+    }
+
+    .menu-container li {
+        padding: 8px 15px; /* Adjusted padding for more space between menu items */
+        white-space: nowrap; /* Prevents text wrapping */
+    }
+
+  
+    .menu-toggle {
+        display: none;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .fixed-menu a {
+        font-size: 24px;  /* Reduce font size for more space */
+        margin-left: 15px;  /* Reduce margin for more space between menu items */
+    }
+
+    .fixed-menu li:first-child a {
+        margin-left: 0;  /* Reset margin for the first item */
+    }
+}
+
+
+/* Desktops and larger tablets in landscape */
+@media (min-width: 1025px) {
+    .menu-container ul {
+        display: flex;
+        position: static;
+        background-color: transparent;
+        flex-direction: row;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+}
+
+
+
+/* Style the first section */
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Set intro width to 100% */
+    height: 600px;
+    background-color: #9FD5CF;
+    color: #fff;
+    font-family: 'Acme', sans-serif;
+    padding: 20px;
+    font-size: 50px;
+    box-sizing: border-box;
+    overflow: hidden; /* Hide potential overflow content */
+
+}
+
+.my-picture {
+  width: 100%; /* Adjust as needed */
+  height: 710px;
+  margin-top: -100px;
+  margin-left: 0px;
+  position: relative;
+  z-index: 1001; /* Place image above .fixed-menu */
+  pointer-events: none;
+  object-fit: cover;
+  order: 2;
+}
+
+.text-container {
+  width: 50%; /* Adjust as needed */
+  order: 1;
+  margin-left: 50px;
+  padding-right: 20px; /* Add some spacing to the right of the text */
+  margin-left: 50px;
+}
+
+.intro h1 {
+  width: 399px;
+  height: 169px;
+  font-size: 8vw;
+}
+
+.intro h2 {
+  width: 664px;
+  height: 176px;
+  font-size: 155px;
+}
+
+.first-p {
+  width: 100%; 
+  font-family: 'Inter', sans-serif;
+  font-size: 37px;
+}
+
+.underlined-text {
+    position: relative;
+}
+
+.underlined-text::after {
+    content: "";
+    display: block;
+    height: 4px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    background-color: #FBE6CD;
+}
+
+
+/* Your existing styles... */
+
+/* Mobile Responsiveness (phone) */
+@media (max-width: 600px) {
+    .intro {
+        flex-direction: column;
+        height: auto; /* Set auto height for better flexibility */
+        padding: 20px 10px; /* Reduced horizontal padding for better utilization of space */
+    }
+
+    .my-picture {
+        width: 80%; /* Adjust for better fit on smaller screens */
+        height: auto;
+        margin-top: 20px;
+        margin-left: 0; /* Resetting margin to zero */
+        order: 1; /* Set image above text */
+    }
+
+    .text-container {
+        width: 100%; 
+        margin: 0; 
+        padding: 20px 0;
+        text-align: center; /* Centralize the text on mobile */
+    }
+
+    .intro h1 {
+        font-size: 5vw; /* Making the text smaller for mobile */
+        width: auto; 
+        height: auto;
+    }
+
+    .intro h2 {
+        font-size: 6vw; /* Adjusted size for "I'm Jessica" */
+        width: auto;
+        height: auto;
+    }
+
+    .first-p {
+        font-size: 4vw;
+    }
+
+    .underlined-text::after {
+        content: "";
+        display: block;
+        height: 4px; 
+        position: absolute; 
+        bottom: -5px; 
+        left: 0; 
+        right: 0; 
+        background-color: #FBE6CD; 
+    }
+
+    .underlined-text {
+        position: relative;
+    }
+    
+    
+}
+
+/* Tablet Responsiveness */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .intro {
+        padding: 30px;
+    }
+
+    .my-picture {
+        width: 50%; /* Reducing the size for a better fit on tablet */
+        height: auto;
+        margin-top: 0; /* Resetting the top margin */
+    }
+
+    .text-container {
+        width: 50%; 
+        margin-left: 30px; 
+        padding-right: 10px;
+    }
+
+    .intro h1 {
+        font-size: 6vw; 
+        width: auto; 
+        height: auto;
+    }
+
+    .intro h2 {
+        font-size: 8vw;
+        width: auto;
+        height: auto;
+    }
+
+    .first-p {
+        font-size: 3vw;
+    }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+  }
+  
+
+  #about {
+    background: #FBE6CD;
+    padding: 20px;
+  }
+  
+  
+  #about h1 {
+    color: #F48480;
+    font-family: 'Acme', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 40px;
+    margin-left: 40px;
+  }
+
+  #about p {
+    color: #000;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: justify;
+    margin-left: 40px;
+  }
+
+   /* Additional styles to better fit smaller screens */
+   #about h1, #about p {
+    margin-left: 20px;
+}
+ 
+  .highlight {
+    color: #394FF4;
+    font-weight: 600;
+  }
+ 
+
+
+  /* Style the skills section */
+  
+#skills {
+    text-align: center;
+    background-color: #EFC1C7; /* Set the background color */
+    padding: 20px 0;
+    
+  }
+
+  #skills h1{
+    color: #fff;
+    font-family: Acme;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    margin-left: 60px;
+  }
+  
+  /* Style the skills container */
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Style each row of skills */
+  .skills-row {
+    display: flex;
+    justify-content: center;
+
+    
+  }
+  
+  /* Style each individual skill */
+  .skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 10px;
+
+  }
+  
+  /* Style the devicon */
+   .skill i {
+    font-size: 80px; /* Adjust the size as needed */
+    color: #fff;
+    margin-left: 80px;
+  }
+  
+  /* Style the skill name */
+  .skill span {
+    margin-top: 10px; /* Add some spacing between the icon and name */
+    font-family: Lato;
+    font-size: 20px; /* Adjust the font size as needed */
+    color: #fff;
+    margin-left: 80px;
+  }
+
+    @media (max-width: 768px) {
+        #skills h1 {
+            font-size: 36px;  /* Further reduce the font size for phones */
+        }
+    
+        .skills-container {
+            flex-direction: column; /* Stack skills vertically on smaller screens */
+        }
+    
+        .skill {
+            width: 50%; /* Two skills side by side */
+            margin: 15px auto; /* Center the skills and reduce margin */
+        }
+    
+        .skill i {
+            font-size: 50px;  /* Further reduce the icon size for phones */
+        }
+    
+        .skill span {
+            font-size: 16px;  /* Adjust font size for phones */
+        }
+    }
+    
+@media only screen and (max-width: 800px) {
+  /* Adjusting the section padding and text alignment for tablet view */
+  #skills {
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Adjusting the h1 size and margin for tablet view */
+  #skills h1 {
+    font-size: 50px;
+    margin-left: 0; /* Centering the header */
+    margin-bottom: 20px; /* Giving it some space below */
+  }
+
+  /* Adjusting the skills container for better spacing */
+  .skills-container {
+    gap: 20px;
+  }
+
+  /* Adjusting each row of skills for better spacing */
+  .skills-row {
+    gap: 20px;
+    flex-wrap: wrap; /* Wrap the skills if they don't fit in a single row */
+  }
+
+  /* Adjusting each individual skill for tablet view */
+  .skill {
+    margin: 10px;
+    flex: 1; /* Make each skill take equal space within its row */
+  }
+
+  /* Adjusting the devicon size and margin for tablet view */
+  .skill i {
+    font-size: 60px;
+    margin-left: 0; /* Remove the left margin for tablet */
+  }
+
+  /* Adjusting the skill name size and margin for tablet view */
+  .skill span {
+    font-size: 18px;
+    margin-left: 0; /* Remove the left margin for tablet */
+  }
+}
+  
+
+/* Default styles for larger screens */
+#work {
+    background-color: #5F78B7;
+    padding: 20px;
+    text-align: center;
+}
+
+#work h1 {
+    color: #fff;
+    font-family: 'Acme', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    margin-left: 60px;
+}
+
+#work h2 {
+    color: #9FD5CF;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 170px;
+}
+
+
+
+/* Style each project container */
+#work .project,
+.second-project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0; /* Add spacing between projects */
+}
+
+
+
+/* Reverse the order of the second project */
+.second-project img {
+    max-width: 70%;
+    height: auto;
+    order: 1;
+    margin-left: -100px;
+    
+}
+
+/* Style the project image */
+.project img {
+    max-width: 70%;
+    height: auto;
+    margin-right: -100px;
+}
+
+/* Style the project info container (text) */
+
+.second-project-info {
+    flex: 1;
+    padding: 20px;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.project-info {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+
+.project-info p,
+.second-project-info p {
+    color: #fff;
+    text-align: right;
+    font-family: Work Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 20px;
+    flex-grow: 1; /* This lets the paragraph expand and take up all available space */
+}
+
+/* This styles the container holding both the devicons and the button */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* keep the devicon aligned with the button */
+#work .project-info .devicons,
+.second-project-info .devicons,
+.actions .devicons {
+    order: 1;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
+
+/*button conf. */
+
+.project-info a,
+.second-project-info a,
+.actions a {
+    order: 2;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #9FD5CF;
+    color: #023933;
+    font-family: 'Acme', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    align-self: flex-end; /* Push the button to the right */
+}
+
+.project a:hover,
+.second-project a:hover {
+    background-color: #023933;
+    color: #9FD5CF;
+}
+
+/* Style the devicons */
+
+
+#work .project .devicons div,
+.second-project .devicons div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+}
+
+#work .project .devicons i,
+.second-project .devicons i {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#work .project .devicons span,
+.second-project .devicons span {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 5px;
+}
+
+/* Style the white container */
+.white-container {
+    background-color: #fff;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: left;
+}
+
+.white-container p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #5F78B7;
+}
+
+.white-container a {
+    color: #5F78B7;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Media query for smaller screens (phones and tablets) */
+
+
+/* ... (your current styles) ... */
+
+/* Styles for Tablets */
+@media (max-width: 1024px) {
+    #work h1 {
+        font-size: 48px;
+        margin-left: 30px;
+    }
+
+    #work h2 {
+        font-size: 32px;
+        margin-left: 90px;
+    }
+
+    .project img, 
+    .second-project img {
+        max-width: 50%;
+    }
+
+    .project-info p, 
+    .second-project-info p {
+        font-size: 18px;
+    }
+}
+
+/* Styles for Phones */
+@media (max-width: 600px) {
+    #work .project,
+    .second-project {
+        flex-direction: column;
+    }
+
+    .project img, 
+    .second-project img {
+        max-width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        order: 0;
+    }
+
+    .project-info, 
+    .second-project-info {
+        order: 1;
+        padding: 10px;
+    }
+
+    #work h1 {
+        font-size: 32px;
+        margin-left: 15px;
+    }
+
+    #work h2 {
+        font-size: 24px;
+        margin-left: 30px;
+    }
+
+    .project-info p, 
+    .second-project-info p {
+        font-size: 16px;
+    }
+}
+
+/*contact section */
+
+#contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #F48480;
+  }
+  .contact-block * {
+    margin: 0;
+    padding: 0;
+}
+  .contact-block {
+    flex-basis: 48%; 
+    text-align: center;
+    margin: 10px;
+    display: flex;
+    align-items: center; /* This will vertically align items in the center */
+    justify-content: center; /* This will horizontally align items in the center */
+    flex-direction: column;
+  }
+  
+  .contact-block h1,
+  .contact-block h2,
+  .contact-block div,
+  .contact-block p {
+    margin: 0;
+    padding: 10px;
+    color: #fff;
+  }
+  
+  .contact-block h1 {
+    color: #FFF;
+    font-family: Acme;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 303px;
+  }
+
+  .contact-block .chat-heading {
+    color: #FFF;
+    font-family: Work Sans;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 250px;
+  }
+
+  .contact-block p {
+    color: #FFF;
+    font-family: Work Sans;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 150px;
+  }
+  .contact-block .ph-envelope {
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    margin-left: -45px;
+}
+
+  
+  .email-icon {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; /* This ensures items are left-aligned in the container */
+}
+
+.email-icon p {
+    margin-left: 5px; /* Adjust as necessary to control spacing between envelope and text */
+}
+
+
+  .contact-block .feeling-social {
+    color: #FFF;
+    font-family: Acme;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 260px;
+  }
+  
+  .contact-block .social-icons i {
+    font-size: 50px; /* Adjust the font size as needed */
+    color: #fff; /* Change the color to your desired color */
+    margin: 10px; /* Add spacing between the icons if needed */
+    
+  }
+  .contact-block .social-icons {
+    display: flex;
+    margin-right: 435px;
+  }
+
+/* Basic style for the social icons */
+.social-icons a {
+    transition: transform 0.3s, color 0.3s;  /* Removed opacity from the transition */
+    display: inline-block;  /* Allows the transform property to work */
+}
+
+.contact-block .social-icons a:hover i {
+    transform: scale(1.1);  /* Scales the icon up */
+    color: #394FF4;  /* Changes the icon color on hover. Update to your desired color */
+}
+
+
+/* Styles for Tablets */
+@media (max-width: 768px) {
+    #contact {
+        display: flex;
+        flex-direction: row; /* This will layout the two blocks side by side on tablet screens */
+    }
+
+    .contact-block {
+        flex-basis: 50%; /* Make each contact block take up half the space */
+        margin: 0; /* Remove margin to utilize the full width */
+    }
+
+    .contact-block h1,
+    .contact-block .chat-heading,
+    .contact-block p,
+    .contact-block .feeling-social {
+        margin-right: 0; /* Reset the margin rights to center the text */
+    }
+
+    .contact-block .social-icons {
+        margin-right: 0; /* Reset the margin rights to center the icons */
+    }
+}
+
+@media (max-width: 1024px) {
+    #contact {
+        display: flex;
+        flex-direction: row; /* This will layout the two blocks side by side on larger tablet screens */
+    }
+
+    .contact-block {
+        flex-basis: 50%; /* Make each contact block take up half the space */
+        margin: 0; /* Remove margin to utilize the full width */
+        padding: 20px; /* Add padding for better spacing */
+    }
+
+    .contact-block h1,
+    .contact-block .chat-heading,
+    .contact-block p,
+    .contact-block .feeling-social {
+        margin-right: 0; /* Reset the margin rights to center the text */
+    }
+
+    .contact-block .social-icons {
+        margin-right: 0; /* Reset the margin rights to center the icons */
+        justify-content: center; /* Center the icons */
+    }
+}
+
+
+/* Styles for Phones */
+@media (max-width: 600px) {
+    #contact {
+        flex-direction: column; /* Stack blocks vertically */
+    }
+
+    .contact-block {
+        flex-basis: 100%; /* Blocks take the full width of the container on phones */
+        padding: 10px; /* Add some padding for better spacing */
+    }
+
+    .contact-block h1,
+    .contact-block .chat-heading,
+    .contact-block .feeling-social {
+        font-size: 36px; /* Reduce font size for headers */
+        margin-right: 20px; /* Reduce right margin */
+    }
+
+    .contact-block p {
+        font-size: 18px; /* Reduce font size for paragraph */
+        margin-right: 20px; /* Reduce right margin */
+    }
+
+    .contact-block .ph-envelope {
+        font-size: 30px;
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .contact-block .social-icons {
+        justify-content: space-around; /* Distribute icons evenly across the width */
+        margin: 10px 0; /* Add some top and bottom margin */
+    }
+
+    .contact-block .social-icons i {
+        margin: 10; /* Remove the margin between icons */
+    }
+}
+
+
+
+
+footer {
+    width: 100%; /* Changed from fixed width to be full width */
+    height: 103px;
+    flex-shrink: 0;
+    background: #FFFDEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0 20px; /* Added some padding on left and right */
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    footer {
+        font-size: 16px;
+    }
+}
+
+/* Phone Styles */
+@media (max-width: 767px) {
+    footer {
+        height: auto; /* Allow height to adjust based on content */
+        padding: 10px 15px; /* Increase padding for smaller screens */
+        font-size: 14px; /* Slightly smaller text for phones */
+    }
+}
+
+.fixed-menu.transparent-menu {
+    background-color: #394FF4;
+}
+
+/* Mobile styles - make the menu transparent when scrolled */
+@media (max-width: 767px) {
+    .fixed-menu.transparent-menu {
+        background-color: rgba(57, 79, 244, 0.5);
+    }
+}
+.menu-container.active ul {
+    background-color: #394FF4;
+}
+.transparent-menu .menu-container ul {
+    background-color: rgba(57, 79, 244, 0.5) !important;
+}
