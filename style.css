@@ -35,12 +35,10 @@ section {
 }
 
 .fixed-menu li:first-child {
-    margin-left: 20px;
+    margin-left: 50px;
     padding-left: 0;
 }
-.fixed-menu li:first-child {
-    margin-left: 20px; /* Adjust this value as needed */
-}
+
 
 .fixed-menu .cabecalho-menu {
     position: relative;
@@ -140,7 +138,13 @@ section {
 
     .fixed-menu {
         z-index: 1007;
+        
     }
+
+    .fixed-menu li:first-child {
+        margin-left: 20px; 
+    }
+    
 }
 
 
@@ -380,36 +384,48 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-bottom: 40px;
-    margin-left: 40px;
+    margin-left: 50px; 
+    margin-top: 50px;
+    margin-bottom: 30px; 
+  
   }
 
   #about p {
     color: #000;
     font-family: 'Lato', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    text-align: justify;
-    margin-left: 40px;
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
-   /* Additional styles to better fit smaller screens */
-   #about h1, #about p {
-    margin-left: 20px;
-}
+
  
-  .highlight {
+   .highlight {
     color: #394FF4;
     font-weight: 600;
+    margin-bottom: 100px;
+    
   }
+
+  #about p:last-child {
+    margin-bottom: 50px;
+}
  
+@media (max-width: 768px) {
+    #about h1 {
+        font-size: 36px;  /* Further reduce the font size for phones */
+    }
+
+}
 
 
   /* Style the skills section */
   
-#skills {
+ #skills {
     text-align: center;
     background-color: #EFC1C7; /* Set the background color */
     padding: 20px 0;
@@ -424,7 +440,21 @@ body {
     font-weight: 400;
     line-height: normal;
     text-align: left;
-    margin-left: 60px;
+    margin-left: 80px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  #skills p{
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: justify;
+    margin: 30px 82px 30px 80px;
+
   }
   
   /* Style the skills container */
@@ -478,7 +508,7 @@ body {
     
         .skill {
             width: 50%; /* Two skills side by side */
-            margin: 15px auto; /* Center the skills and reduce margin */
+            margin: 40px auto; /* Center the skills and reduce margin */
         }
     
         .skill i {
@@ -499,9 +529,17 @@ body {
 
   /* Adjusting the h1 size and margin for tablet view */
   #skills h1 {
-    font-size: 50px;
-    margin-left: 0; /* Centering the header */
-    margin-bottom: 20px; /* Giving it some space below */
+    font-size: 30px;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+  }
+
+  #skills p {
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
   }
 
   /* Adjusting the skills container for better spacing */
@@ -540,6 +578,7 @@ body {
     background-color: #5F78B7;
     padding: 20px;
     text-align: center;
+    margin-top: 0;
 }
 
 #work h1 {
@@ -551,6 +590,7 @@ body {
     line-height: normal;
     text-align: left;
     margin-left: 60px;
+    margin-top: 50px;
 }
 
 #work h2 {
@@ -560,9 +600,23 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-align: right;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    
+    
+}
+
+#work .project h2 {
+    color: #9FD5CF;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     text-align: left;
     margin-bottom: 20px;
-    margin-left: 170px;
+    margin-left: 50px;
 }
 
 
@@ -580,18 +634,18 @@ body {
 
 /* Reverse the order of the second project */
 .second-project img {
-    max-width: 70%;
+    max-width: 60%;
     height: auto;
     order: 1;
-    margin-left: -100px;
+    margin-left: -50px;
     
 }
 
 /* Style the project image */
 .project img {
-    max-width: 70%;
+    max-width: 60%;
     height: auto;
-    margin-right: -100px;
+    margin-right: 0px;
 }
 
 /* Style the project info container (text) */
@@ -614,7 +668,20 @@ body {
 }
 
 
-.project-info p,
+.project-info p
+ {
+    color: #fff;
+    text-align: left;
+    font-family: Work Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    flex-grow: 1; /* This lets the paragraph expand and take up all available space */
+}
+
 .second-project-info p {
     color: #fff;
     text-align: right;
@@ -624,6 +691,7 @@ body {
     font-weight: 300;
     line-height: normal;
     margin-bottom: 20px;
+    margin-right: 50px;
     flex-grow: 1; /* This lets the paragraph expand and take up all available space */
 }
 
@@ -633,22 +701,24 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-/* keep the devicon aligned with the button */
-#work .project-info .devicons,
-.second-project-info .devicons,
-.actions .devicons {
-    order: 1;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-left: auto;
-    margin-bottom: 20px;
-}
 
 
 /*button conf. */
 
-.project-info a,
+.project-info a{
+    order: 2;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #9FD5CF;
+    color: #023933;
+    font-family: 'Acme', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    align-self: flex-start; /* Push the button to the left */
+    margin-top: 10px;
+    margin-left: 50px;
+
+}
+
 .second-project-info a,
 .actions a {
     order: 2;
@@ -660,6 +730,7 @@ body {
     transition: background-color 0.3s, color 0.3s;
     align-self: flex-end; /* Push the button to the right */
     margin-top: 10px;
+    margin-right: 50px;
 }
 
 .project a:hover,
@@ -670,14 +741,41 @@ body {
 
 /* Style the devicons */
 
+/* keep the devicon aligned with the button */
+#work .project .devicons{
+    order: 1;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start; /* Align to the left */
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
 
-#work .project .devicons div,
-.second-project .devicons div {
+#work .second-project .devicons {
+    order: 1;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end; /* Align to the right */
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+
+#work .project .devicons div {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 15px;
 }
+
+#work .second-project .devicons div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 15px;
+}
+
 
 #work .project .devicons i,
 .second-project .devicons i {
@@ -766,19 +864,57 @@ body {
 
     #work h1 {
         font-size: 32px;
-        margin-left: 15px;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 30px;
+        text-align: center;
     }
 
     #work h2 {
         font-size: 24px;
+        margin-right: 30px;
+        margin-bottom: 0;
+    }
+
+    #work .project h2{
+        font-size: 24px;
         margin-left: 30px;
+        margin-bottom: 0;
+    }
+
+    #work .project .devicons {
+        margin-left: 30px;
+    }
+
+    #work .second-project .devicons {
+        margin-right: 30px;
+    }
+
+    .project-info a{
+        margin-left: 30px;
+    }
+
+    .second-project-info a{
+        margin-right: 30px;
     }
 
     .project-info p, 
     .second-project-info p {
+        font-size: 20px;
+        margin: 30px;
+    }
+
+    .white-container p{
         font-size: 16px;
+        
+    }
+
+    .white-container {
+        margin: 30px;
     }
 }
+
+
 
 /*contact section */
 
